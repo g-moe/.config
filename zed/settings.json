@@ -7,7 +7,15 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
-	"disable_ai": false,
+	"diff_view_style": "unified",
+ "session": {
+  "trust_all_worktrees": true
+ },
+ "vim_mode": true,
+ "mouse_wheel_zoom": true,
+ "colorize_brackets": false,
+ "wrap_guides": [],
+ "disable_ai": false,
 	"active_pane_modifiers": {
 		"border_size": 1.0
 	},
@@ -64,7 +72,16 @@
 		"play_sound_when_agent_done": true
 	},
 	"agent_servers": {
-		"OpenCode": {
+		"claude-acp": {
+   "type": "registry"
+  },
+  "codex-acp": {
+   "type": "registry"
+  },
+  "cursor": {
+   "type": "registry"
+  },
+  "OpenCode": {
 			"type": "custom",
 			"command": "opencode",
 			"args": ["acp"]
@@ -72,7 +89,7 @@
 	},
 	"base_keymap": "VSCode",
 	"buffer_font_family": "JetBrainsMono Nerd Font",
-	"buffer_font_size": 16.0,
+	"buffer_font_size": 15.0,
 	"buffer_font_weight": 450.0,
 	"buffer_line_height": {
 		"custom": 1.5
@@ -106,8 +123,14 @@
 		"mode": "subtle"
 	},
 	"file_types": {
-		"cpp": ["*.cpp"],
-		"tailwindcss": ["*.css"]
+		"cpp": [
+   "*.cpp",
+   "*.cpp"
+  ],
+		"tailwindcss": [
+   "*.css",
+   "*.css"
+  ]
 	},
 	"formatter": "auto",
 	"format_on_save": "on",
@@ -118,7 +141,11 @@
 		}
 	},
 	"hover_popover_delay": 500,
-	"icon_theme": "Zed (Default)",
+	"icon_theme": {
+  "mode": "system",
+  "light": "Zed (Default)",
+  "dark": "Zed (Default)"
+ },
 	"indent_guides": {
 		"active_line_width": 2,
 		"background_coloring": "disabled",
@@ -128,7 +155,12 @@
 	},
 	"languages": {
 		"JavaScript": {
-			"formatter": [
+			"colorize_brackets": false,
+   "show_whitespaces": "none",
+   "wrap_guides": [],
+   "preferred_line_length": 80,
+   "soft_wrap": "editor_width",
+   "formatter": [
 				{
 					"language_server": {
 						"name": "biome"
@@ -140,7 +172,12 @@
 			}
 		},
 		"TypeScript": {
-			"formatter": [
+			"colorize_brackets": false,
+   "show_whitespaces": "none",
+   "wrap_guides": [],
+   "preferred_line_length": 80,
+   "soft_wrap": "editor_width",
+   "formatter": [
 				{
 					"language_server": {
 						"name": "biome"
@@ -152,7 +189,12 @@
 			}
 		},
 		"JSON": {
-			"formatter": [
+			"colorize_brackets": false,
+   "show_whitespaces": "none",
+   "wrap_guides": [],
+   "preferred_line_length": 80,
+   "soft_wrap": "editor_width",
+   "formatter": [
 				{
 					"language_server": {
 						"name": "biome"
@@ -164,7 +206,12 @@
 			}
 		},
 		"JSONC": {
-			"formatter": [
+			"colorize_brackets": false,
+   "show_whitespaces": "none",
+   "wrap_guides": [],
+   "preferred_line_length": 80,
+   "soft_wrap": "editor_width",
+   "formatter": [
 				{
 					"language_server": {
 						"name": "biome"
@@ -176,7 +223,12 @@
 			}
 		},
 		"CSS": {
-			"formatter": [
+			"colorize_brackets": false,
+   "show_whitespaces": "none",
+   "wrap_guides": [],
+   "preferred_line_length": 80,
+   "soft_wrap": "editor_width",
+   "formatter": [
 				{
 					"language_server": {
 						"name": "biome"
@@ -190,7 +242,8 @@
 	},
 	"max_tabs": 1,
 	"minimap": {
-		"show": "never"
+		"thumb": "always",
+  "show": "never"
 	},
 	"notification_panel": {
 		"dock": "left"
@@ -202,7 +255,7 @@
 			"show": "always"
 		},
 		"default_width": 240.0,
-		"auto_fold_dirs": true,
+		"auto_fold_dirs": false,
 		"dock": "left",
 		"entry_spacing": "standard",
 		"indent_size": 16.0,
@@ -214,12 +267,12 @@
 		"diagnostics": "all",
 		"show": "always",
 		"axes": {
-			"horizontal": null,
-			"vertical": null
+			"horizontal": false,
+			"vertical": true
 		}
 	},
 	"show_signature_help_after_edits": false,
-	"show_whitespaces": "selection",
+	"show_whitespaces": "none",
 	"soft_wrap": "editor_width",
 	"diagnostics": {
 		"inline": {
@@ -250,7 +303,11 @@
 		"show_close_button": "hidden"
 	},
 	"terminal": {
-		"scrollbar": {
+		"bell": "off",
+  "line_height": {
+   "custom": 1.0
+  },
+  "scrollbar": {
 			"show": "never"
 		},
 		"toolbar": {
@@ -262,7 +319,7 @@
 		"dock": "bottom",
 		"font_family": "JetBrainsMono Nerd Font",
 		"font_features": null,
-		"font_size": 14.5
+		"font_size": 14.0
 	},
 	"title_bar": {
 		"show_branch_icon": true, // Show/hide branch icon beside branch switcher
@@ -273,7 +330,11 @@
 		"show_sign_in": true, // Show/hide sign-in button
 		"show_menus": true // Show/hide menus
 	},
-	"theme": "GitHub Dark Dimmed",
+	"theme": {
+  "mode": "system",
+  "light": "One Light",
+  "dark": "One Dark"
+ },
 	"toolbar": {
 		"agent_review": true,
 		"breadcrumbs": true,
