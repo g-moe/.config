@@ -66,6 +66,14 @@ configure_trackpad() {
   log_info 'Trackpad tracking speed set to 5.'
 }
 
+configure_keyboard_repeat() {
+  defaults write NSGlobalDomain KeyRepeat -int 120
+  defaults write NSGlobalDomain InitialKeyRepeat -int 25
+
+  log_info 'Key repeat rate set to slow (120 ms).'
+  log_info 'Delay until repeat set to shortest (225 ms).'
+}
+
 mac_file_associations() {
   local script_path="$SCRIPT_DIR/mac-file-associations.sh"
 
@@ -364,6 +372,7 @@ main() {
   run_step 'Set Black Wallpaper and Screen Saver' set_black_wallpaper_and_screensaver
   run_step 'Disable Handoff' disable_handoff
   run_step 'Configure Trackpad' configure_trackpad
+  run_step 'Configure Keyboard Repeat' configure_keyboard_repeat
   run_step 'Install File Associations' mac_file_associations
   run_step 'Configure Finder Preferences' configure_finder_preferences
   run_step 'Configure Remote Access' configure_remote_access
