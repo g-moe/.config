@@ -79,6 +79,18 @@ alias gclean='git clean -fd'
 # Env vars
 export TERM=xterm-256color
 
+# Default editor (prefer nvim > vim > vi)
+if command -v nvim >/dev/null 2>&1; then
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+elif command -v vim >/dev/null 2>&1; then
+  export EDITOR='vim'
+  export VISUAL='vim'
+else
+  export EDITOR='vi'
+  export VISUAL='vi'
+fi
+
 # Github token from keychain or gh cli
 if [[ "$is_macos" == true ]] && command -v security >/dev/null 2>&1; then
   token="$(security find-generic-password -s "GITHUB_TOKEN" -w 2>/dev/null || true)"
