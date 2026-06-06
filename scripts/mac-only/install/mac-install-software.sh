@@ -113,6 +113,20 @@ install_tailscale() {
   esac
 }
 
+install_nordvpn() {
+  local choice
+  choice="$(interactive_select 'Install NordVPN?' 'Skip' 'Install')"
+
+  case "$choice" in
+    0)
+      log_info 'Skipping NordVPN install.'
+      ;;
+    1)
+      install_cask nordvpn
+      ;;
+  esac
+}
+
 install_opencode_desktop() {
   if brew_has_cask opencode-desktop; then
     log_info 'opencode-desktop already installed.'
@@ -143,6 +157,7 @@ main() {
   run_step 'Install Karabiner-Elements' install_cask karabiner-elements
   run_step 'Install BetterDisplay' install_cask betterdisplay
   run_step 'Install Tailscale' install_tailscale
+  run_step 'Install NordVPN' install_nordvpn
   run_step 'Install balenaEtcher' install_cask balenaetcher
   run_step 'Install Raycast' install_cask raycast
   run_step 'Install VSCodium' install_cask vscodium
