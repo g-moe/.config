@@ -47,6 +47,8 @@ set_black_screensaver() {
   defaults -currentHost write com.apple.ScreenSaverPhotoChooser LastViewedPhotoPath -string "$image_path"
   defaults -currentHost write com.apple.ScreenSaverPhotoChooser ShufflesPhotos -bool false
 
+  defaults -currentHost write com.apple.screensaver idleTime -int 0
+
   log_info 'Screen saver configured to use black image folder.'
 }
 
