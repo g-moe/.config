@@ -1,10 +1,6 @@
 # Path to your oh-my-zsh installation
 export ZSH="$HOME/.oh-my-zsh"
 
-# Platform detection
-is_macos=false
-[[ "$OSTYPE" == darwin* ]] && is_macos=true
-
 # Theme
 ZSH_THEME="gtheme-dark"
 
@@ -28,8 +24,18 @@ plugins=(
   web-search
 )
 
+# Platform detection
+is_macos=false
+[[ "$OSTYPE" == darwin* ]] && is_macos=true
+
+# macOS-only plugins
 if [[ "$is_macos" == true ]]; then
   plugins+=(brew macos copypath copyfile)
+fi
+
+# Enable grep color when the installed grep supports --color
+if command grep --help 2>&1 | command grep -q -- '--color'; then
+  alias grep='grep --color=auto'
 fi
 
 # Oh My Zsh
@@ -56,27 +62,31 @@ if (( ${+widgets[history-substring-search-up]} )); then
 fi
 bindkey '^R' history-incremental-search-backward
 
-# Aliases
-if command grep --help 2>&1 | command grep -q -- '--color'; then
-  alias grep='grep --color=auto'
-fi
 # Reload zshrc
 alias reload='source ~/.zshrc'
-# Clear screen
-alias cls='clear'
+
 # History
 alias h='history'
+
 # Copy to clipboard and print to terminal
 alias -g yank='| tee /dev/tty | pbcopy'
-# Git
+
+# Git commit
 alias gcm='git commit -m'
-alias gstash='git stash -u'
-alias gapply='git stash apply'
-alias gclean-dry='git clean -nd'
-alias gclean='git clean -fd'
 
+# Git stash including untracked files
+alias gs='git stash -u'
 
-# Env vars
+# Git stash apply 
+alias gsa='git stash apply'
+
+# Git clean dry
+alias gc-dry='git clean -nd'
+
+# Git clean force
+alias gc='git clean -fd'
+
+# Support 256 color terminal
 export TERM=xterm-256color
 
 # Default editor (prefer nvim > vim > vi)
@@ -110,7 +120,7 @@ export NVM_DIR="$HOME/.nvm"
 [[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"
 [[ -s "$NVM_DIR/bash_completion" ]] && source "$NVM_DIR/bash_completion"
 
-# Path
+# Prefer installed CLI tools
 export PATH="$HOME/.local/bin:$PATH"
 
 # opencode
