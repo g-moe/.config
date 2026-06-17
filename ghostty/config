@@ -17,7 +17,8 @@ font-family = JetBrainsMono Nerd Font
 font-size = 14
 focus-follows-mouse = true
 copy-on-select = true
-unfocused-split-opacity = 1
+unfocused-split-opacity = 0.5
+
 
 # Command palette
 keybind = super+shift+p=unbind
