@@ -9,7 +9,7 @@
 		"typecheck": "tsc -b --noEmit",
 		"typecheck:tsgo": "tsgo -b --noEmit",
 		"skills:install": "tsx scripts/skills-install.ts",
-		"theme": "tsx custom-themes/create/controller.ts",
+		"theme:install": "tsx custom-themes/create/controller.ts",
 		"vscode-install": "bash scripts/vscode-install.sh",
 		"mac:install": "bash scripts/mac-install.sh",
 		"mac:uninstall": "bash scripts/mac-uninstall.sh"
