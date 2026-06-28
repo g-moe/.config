@@ -166,7 +166,6 @@ main() {
   run_step 'Install UTM' install_cask utm
   run_step 'Install Google Chrome' install_cask google-chrome
   run_step 'Install Firefox' install_cask firefox
-  run_step 'Install Brave Browser' install_cask brave-browser
   run_step 'Install Homerow' install_cask homerow
   run_step 'Install GIMP' install_cask gimp
   run_step 'Install cloudflared' install_formula cloudflared

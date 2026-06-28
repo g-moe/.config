@@ -426,7 +426,6 @@ configure_dock() {
   local system_settings_app
   local activity_monitor_app
   local notes_app
-  local discord_app
   local ghostty_app
   local opencode_app
   local codex_app
@@ -466,7 +465,6 @@ configure_dock() {
   system_settings_app="$(resolve_required_app_path 'System Settings.app' '/System/Applications/System Settings.app')"
   activity_monitor_app="$(resolve_required_app_path 'Activity Monitor.app' '/System/Applications/Utilities/Activity Monitor.app')"
   notes_app="$(resolve_required_app_path 'Notes.app' '/System/Applications/Notes.app' '/Applications/Notes.app')"
-  discord_app="$(resolve_required_app_path 'Discord.app' '/Applications/Discord.app')"
   ghostty_app="$(resolve_required_app_path 'Ghostty.app' '/Applications/Ghostty.app')"
   opencode_app="$(resolve_required_app_path 'OpenCode.app' '/Applications/OpenCode.app')"
   codex_app="$(resolve_required_app_path 'Codex.app' '/Applications/Codex.app')"
@@ -479,7 +477,6 @@ configure_dock() {
   add_dock_app "$system_settings_app"
   add_dock_app "$activity_monitor_app"
   add_dock_app "$notes_app"
-  add_dock_app "$discord_app"
   add_dock_app "$ghostty_app"
   add_dock_app "$opencode_app"
   add_dock_app "$codex_app"
