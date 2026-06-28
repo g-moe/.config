@@ -630,8 +630,6 @@ configure_control_center() {
   defaults write com.apple.controlcenter "NSStatusItem VisibleCC BentoBox-0" -bool true
   defaults write com.apple.controlcenter "NSStatusItem VisibleCC Clock" -bool true
 
-  defaults write com.apple.controlcenter AutoHideMenuBarOption -int 3
-
   # Hide Spotlight search icon from menu bar
   defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1
 
@@ -642,7 +640,9 @@ configure_control_center() {
 }
 
 configure_menu_bar() {
+  defaults write com.apple.controlcenter AutoHideMenuBarOption -int 3
   defaults write NSGlobalDomain _HIHideMenuBar -bool false
+  defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -bool true
   defaults write NSGlobalDomain NSRecentDocumentsLimit -int 0
 
   # 'Show menu bar background' is a newer macOS setting (Tahoe 26+) and its
@@ -661,6 +661,7 @@ configure_menu_bar() {
   defaults write com.apple.menuextra.clock ShowDate -int 0
 
   log_info 'Menu bar configured to never hide.'
+  log_info 'Menu bar background configured with the legacy transparency key.'
   log_info 'Recent documents, applications, and servers set to none.'
   log_info 'Menu bar clock format set to "May 31 21:29:18".'
   log_info 'Note: macOS menu bar clock does not support timezone display in the format string.'
