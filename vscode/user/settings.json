@@ -3,41 +3,41 @@
 		"editor.autoIndent": "advanced",
 		"editor.defaultFormatter": "redhat.vscode-yaml",
 		"editor.insertSpaces": true,
-		"editor.tabSize": 2
+		"editor.tabSize": 2,
 	},
 	"[github-actions-workflow]": {
-		"editor.defaultFormatter": "redhat.vscode-yaml"
+		"editor.defaultFormatter": "redhat.vscode-yaml",
 	},
 	"[go]": {
 		"editor.defaultFormatter": "golang.go",
 		"editor.formatOnSave": true,
-		"editor.insertSpaces": true
+		"editor.insertSpaces": true,
 	},
 	"[typescript]": {
 		"editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" },
 		"editor.defaultFormatter": "oxc.oxc-vscode",
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
 	},
 	"[javascript]": {
 		"editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" },
 		"editor.defaultFormatter": "oxc.oxc-vscode",
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
 	},
 	"[typescriptreact]": {
 		"editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" },
 		"editor.defaultFormatter": "oxc.oxc-vscode",
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
 	},
 	"[javascriptreact]": {
 		"editor.codeActionsOnSave": { "source.fixAll.oxc": "explicit" },
 		"editor.defaultFormatter": "oxc.oxc-vscode",
-		"editor.formatOnSave": true
+		"editor.formatOnSave": true,
 	},
 	"accessibility.dimUnfocused.opacity": 0.8,
 	"accessibility.signals.chatEditModifiedFile": { "sound": "off" },
 	"accessibility.signals.chatRequestSent": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.chatResponseReceived": { "sound": "off" },
 	"accessibility.signals.clear": { "announcement": "auto", "sound": "off" },
@@ -49,69 +49,69 @@
 	"accessibility.signals.editsKept": { "announcement": "auto", "sound": "off" },
 	"accessibility.signals.editsUndone": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.lineHasBreakpoint": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.lineHasError": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.lineHasFoldedArea": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.lineHasInlineSuggestion": { "sound": "off" },
 	"accessibility.signals.lineHasWarning": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.noInlayHints": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.notebookCellCompleted": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.notebookCellFailed": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.onDebugBreak": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.positionHasError": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.positionHasWarning": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.progress": { "announcement": "auto", "sound": "off" },
 	"accessibility.signals.taskCompleted": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.taskFailed": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.terminalBell": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.terminalCommandFailed": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.terminalCommandSucceeded": {
 		"announcement": "auto",
-		"sound": "off"
+		"sound": "off",
 	},
 	"accessibility.signals.terminalQuickFix": { "sound": "off" },
 	"accessibility.signals.voiceRecordingStarted": { "sound": "off" },
@@ -137,7 +137,7 @@
 	"editor.fontFamily": "JetBrains Mono",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 15,
-	"editor.fontWeight": "350",
+	"editor.fontWeight": "750",
 	"editor.formatOnSave": true,
 	"editor.gotoLocation.multipleDeclarations": "goto",
 	"editor.gotoLocation.multipleDefinitions": "goto",
@@ -167,8 +167,8 @@
 	"editor.suggest.showReferences": false,
 	"editor.tokenColorCustomizations": {
 		"textMateRules": [
-			{ "scope": "comment", "settings": { "fontStyle": "italic" } }
-		]
+			{ "scope": "comment", "settings": { "fontStyle": "italic" } },
+		],
 	},
 	"editor.unicodeHighlight.ambiguousCharacters": false,
 	"editor.unicodeHighlight.invisibleCharacters": false,
@@ -176,7 +176,7 @@
 	"editor.wordWrapColumn": 80,
 	"explorer.autoRevealExclude": {
 		"**/bower_components": false,
-		"**/node_modules": false
+		"**/node_modules": false,
 	},
 	"explorer.compactFolders": false,
 	"explorer.confirmDelete": false,
@@ -191,7 +191,7 @@
 		"**/.hg": true,
 		"**/.svn": true,
 		"**/CVS": true,
-		"**/Thumbs.db": true
+		"**/Thumbs.db": true,
 	},
 	"files.saveConflictResolution": "overwriteFileOnDisk",
 	"git.autofetch": true,
@@ -222,7 +222,7 @@
 		"searchAndCompare": false,
 		"stashes": false,
 		"tags": false,
-		"worktrees": false
+		"worktrees": false,
 	},
 	"go.toolsManagement.autoUpdate": true,
 	"html.autoClosingTags": false,
@@ -239,7 +239,7 @@
 		"!**/node_modules",
 		"!**/.git",
 		"!**/vendor",
-		"!**/.github/trigger-full-pipeline.md"
+		"!**/.github/trigger-full-pipeline.md",
 	],
 	"material-icon-theme.files.color": "#7c7d8d",
 	"material-icon-theme.folders.color": "#7c7d8d",
@@ -266,7 +266,7 @@
 	"remote.autoForwardPortsSource": "hybrid",
 	"remote.SSH.remotePlatform": {
 		"sandbox.mfh2y5.csb": "linux",
-		"windows-vm": "windows"
+		"windows-vm": "windows",
 	},
 	"scm.alwaysShowActions": true,
 	"scm.compactFolders": false,
@@ -312,7 +312,7 @@
 		"FIXME": { "icon": "flame" },
 		"HACK": { "icon": "tools" },
 		"TODO": { "icon": "checklist" },
-		"XXX": { "icon": "x" }
+		"XXX": { "icon": "x" },
 	},
 	"typescript.preferences.importModuleSpecifier": "relative",
 	"typescript.preferences.importModuleSpecifierEnding": "js",
@@ -323,10 +323,10 @@
 	"vitest.maximumConfigs": 20,
 	"window.autoDetectHighContrast": false,
 	"window.commandCenter": false,
-    "window.confirmBeforeClose": "keyboardOnly",
+	"window.confirmBeforeClose": "keyboardOnly",
 	"workbench.colorCustomizations": {
 		"tree.inactiveIndentGuidesStroke": "#7c7d8d00",
-		"tree.indentGuidesStroke": "#5a5a5a65"
+		"tree.indentGuidesStroke": "#5a5a5a65",
 	},
 	"workbench.colorTheme": "gtheme-dark",
 	"workbench.editor.closeEmptyGroups": false,
@@ -412,10 +412,10 @@
 	"workbench.startupEditor": "none",
 	"workbench.editor.splitInGroupLayout": "vertical",
 	"workbench.layoutControl.enabled": false,
-    "supermaven.enable": {
-        "*": false
-    },
+	"supermaven.enable": {
+		"*": false,
+	},
 	"workbench.activityBar.location": "top",
+    "window.density.editorTabHeight": "compact",
     "workbench.preferredDarkColorTheme": "gtheme-dark",
-    "window.density.editorTabHeight": "compact"
 }

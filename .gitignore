@@ -99,6 +99,10 @@
 !scripts/mac-only/zen-switcher/**
 !scripts/mac-only/toggle-ghostty-quick-terminal.sh
 !scripts/mac-only/zoom-all-window.sh
+!scripts/mac-only/arc-main-window.sh
+!scripts/mac-only/arc-window-toggle.sh
+!scripts/mac-only/window-toggle/
+!scripts/mac-only/window-toggle/**
 
 # launchd
 !launchd/
