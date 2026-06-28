@@ -150,6 +150,21 @@ configure_keyboard_repeat() {
   log_info 'Delay until repeat set to shortest (225 ms).'
 }
 
+configure_theme() {
+  defaults write NSGlobalDomain AppleAccentColor -int 4
+  defaults write NSGlobalDomain AppleHighlightColor -string '0.698039 0.843137 1.000000 Blue'
+  defaults write NSGlobalDomain AppleInterfaceStyle -string Dark
+  defaults write NSGlobalDomain AppleIconAppearanceTheme -string TintedDark
+  defaults write NSGlobalDomain AppleIconAppearanceTintColor -string Other
+  defaults write NSGlobalDomain AppleIconAppearanceCustomTintColor -string '0.596078 0.596078 0.615686 0.250000'
+
+  log_info 'Theme color set to blue.'
+  log_info 'Text highlight color set to blue.'
+  log_info 'Appearance set to dark.'
+  log_info 'Icon and widget style set to tinted dark.'
+  log_info 'Icon, widget, and folder color set to custom gray.'
+}
+
 configure_mission_control() {
   defaults write com.apple.dock mru-spaces -bool false
   defaults write NSGlobalDomain AppleSpacesSwitchOnActivate -bool false
@@ -671,6 +686,7 @@ main() {
   run_step 'Disable Siri' disable_siri
   run_step 'Configure Trackpad' configure_trackpad
   run_step 'Configure Keyboard Repeat' configure_keyboard_repeat
+  run_step 'Configure Theme' configure_theme
   run_step 'Configure Mission Control' configure_mission_control
   run_step 'Install File Associations' mac_file_associations
   run_step 'Configure Finder Preferences' configure_finder_preferences
