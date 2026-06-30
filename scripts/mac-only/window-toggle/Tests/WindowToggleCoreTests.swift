@@ -38,6 +38,18 @@ func testCornerParkingMatchesAeroSpaceStyle() {
     expect(isParked(parked, screens: screens), "corner-parked window is detected as parked")
 }
 
+func testCornerParkingAvoidsNeighboringMonitor() {
+    let screens = [
+        CGRect(x: 0, y: 0, width: 1920, height: 1080),
+        CGRect(x: 1728, y: 1080, width: 1000, height: 1000),
+    ]
+    let bounds = WindowBounds(origin: CGPoint(x: 8, y: 38), size: CGSize(width: 900, height: 900))
+    let parked = WindowBounds(origin: parkedPoint(for: bounds, screens: screens), size: bounds.size)
+
+    expect(parked.origin == CGPoint(x: -899, y: 1079), "parked point uses bottom-left when bottom-right overlaps another monitor")
+    expect(isParked(parked, screens: screens), "bottom-left parked window is detected as parked")
+}
+
 func testPlannerFocusesMainWindowsBeforeParking() {
     let windows = [
         WindowSnapshot(id: 1, bounds: WindowBounds(origin: CGPoint(x: 8, y: 38), size: CGSize(width: 900, height: 900)), isFocused: false),
@@ -84,6 +96,7 @@ struct TestRunner {
         testBoundsEncoding()
         testScreenClassificationUsesCoreGraphicsCoordinates()
         testCornerParkingMatchesAeroSpaceStyle()
+        testCornerParkingAvoidsNeighboringMonitor()
         testPlannerFocusesMainWindowsBeforeParking()
         testPlannerParksAllFocusedMainWindows()
         testPlannerRestoresParkedWindowsThenFocusesGroup()

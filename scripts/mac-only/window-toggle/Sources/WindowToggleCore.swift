@@ -20,6 +20,11 @@ enum WindowAction: Equatable {
     case save(String)
 }
 
+enum HideCorner {
+    case bottomLeft
+    case bottomRight
+}
+
 func encode(_ bounds: WindowBounds) -> String {
     "\(Int(bounds.origin.x)),\(Int(bounds.origin.y)),\(Int(bounds.size.width)),\(Int(bounds.size.height))"
 }
@@ -58,9 +63,40 @@ func isOnAnyScreen(_ bounds: WindowBounds, screens: [CGRect]) -> Bool {
     screen(containing: bounds, screens: screens) != nil
 }
 
+func optimalHideCorner(for targetScreen: CGRect, screens: [CGRect]) -> HideCorner {
+    let xOffset = targetScreen.width * 0.1
+    let yOffset = targetScreen.height * 0.1
+
+    let bottomRightCandidates = [
+        CGPoint(x: targetScreen.maxX + 2, y: targetScreen.maxY - yOffset),
+        CGPoint(x: targetScreen.maxX - xOffset, y: targetScreen.maxY + 2),
+        CGPoint(x: targetScreen.maxX + 2, y: targetScreen.maxY + 2),
+    ]
+    let bottomLeftCandidates = [
+        CGPoint(x: targetScreen.minX - 2, y: targetScreen.maxY - yOffset),
+        CGPoint(x: targetScreen.minX + xOffset, y: targetScreen.maxY + 2),
+        CGPoint(x: targetScreen.minX - 2, y: targetScreen.maxY + 2),
+    ]
+
+    func score(_ candidates: [CGPoint]) -> Int {
+        candidates.enumerated().reduce(0) { total, candidate in
+            let weight = candidate.offset == 2 ? 10 : 1
+            let overlaps = screens.contains { $0.contains(candidate.element) }
+            return total + (overlaps ? weight : 0)
+        }
+    }
+
+    return score(bottomLeftCandidates) < score(bottomRightCandidates) ? .bottomLeft : .bottomRight
+}
+
 func parkedPoint(for bounds: WindowBounds, screens: [CGRect]) -> CGPoint {
-    let screen = screen(containing: bounds, screens: screens) ?? screens.first ?? .zero
-    return CGPoint(x: screen.maxX - 1, y: screen.maxY - 1)
+    let targetScreen = screen(containing: bounds, screens: screens) ?? screens.first ?? .zero
+    switch optimalHideCorner(for: targetScreen, screens: screens) {
+        case .bottomLeft:
+            return CGPoint(x: targetScreen.minX + 1 - bounds.size.width, y: targetScreen.maxY - 1)
+        case .bottomRight:
+            return CGPoint(x: targetScreen.maxX - 1, y: targetScreen.maxY - 1)
+    }
 }
 
 func isParked(_ bounds: WindowBounds, screens: [CGRect]) -> Bool {
