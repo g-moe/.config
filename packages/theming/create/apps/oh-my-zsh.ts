@@ -24,12 +24,12 @@ local user_bg="$(gtheme_machine_color)"
 local user_fg='#000000'
 [[ "$machine_color" == black || -z "$machine_color" ]] && user_fg='#FFFFFF'
 local path_bg="${variant.foregroundMuted}"
-local path_fg="${variant.foreground}"
+local path_fg='#FFFFFF'
 local muted_color="${variant.foregroundMuted}"
 local prompt_color="${variant.foregroundMuted}"
 
 function prompt_context_line() {
-  print -nr -- "%K{\${user_bg}}%F{\${user_fg}} ⌘ %m %k%f%K{\${path_bg}}%F{\${user_fg}} %~ %k%f"
+  print -nr -- "%K{\${user_bg}}%F{\${user_fg}} ⌘ %m %k%f%K{\${path_bg}}%F{\${path_fg}} %~ %k%f"
 }
 
 function parse_git_branch() {
