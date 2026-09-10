@@ -32,6 +32,7 @@
 !/vscode/user/extensions.json
 !/vscode/user/keybindings.json
 !/vscode/user/settings.json
+!/vscode/user/personal.code-snippets
 
 # Skills
 !/.agents/

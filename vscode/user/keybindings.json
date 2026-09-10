@@ -1594,20 +1594,12 @@
 		"key": "shift+cmd+o",
 		"command": "workbench.action.showAllSymbols"
 	},
-	{
-		"key": "ctrl+shift+alt+d",
-		"command": "workbench.action.navigateBackInNavigationLocations"
-	},
-	{
+    {
 		"key": "ctrl+shift+-",
 		"command": "-workbench.action.navigateForward",
 		"when": "canNavigateForward"
 	},
-	{
-		"key": "ctrl+shift+alt+f",
-		"command": "workbench.action.navigateForwardInNavigationLocations"
-	},
-	{
+    {
 		"key": "cmd+k cmd+i",
 		"command": "-workbench.action.showHover",
 		"when": "!editorTextFocus"
@@ -1951,5 +1943,13 @@
         "key": "cmd+k shift+alt+cmd+c",
         "command": "-copyRelativeFilePath",
         "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+shift+alt+d",
+        "command": "workbench.action.navigateBackInEditLocations"
+    },
+    {
+        "key": "ctrl+shift+alt+f",
+        "command": "workbench.action.navigateForwardInEditLocations"
     }
 ]

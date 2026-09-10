@@ -57,5 +57,6 @@ esac
 
 expect_link "$ROOT_DIR/vscode/user/settings.json" "$vscodium/settings.json"
 expect_link "$ROOT_DIR/vscode/user/keybindings.json" "$vscodium/keybindings.json"
+expect_link "$ROOT_DIR/vscode/user/personal.code-snippets" "$vscodium/snippets/personal.code-snippets"
 
 printf 'Installed links point to ~/.dotfiles and are not broken.\n'

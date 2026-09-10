@@ -264,7 +264,6 @@
 		"windows-vm": "windows"
 	},
 	"scm.alwaysShowActions": true,
-	"scm.compactFolders": false,
 	"scm.defaultViewMode": "tree",
 	"scm.diffDecorationsGutterPattern": { "added": true },
 	"scm.inputFontFamily": "JetBrains Mono",
@@ -365,7 +364,7 @@
 	"workbench.editor.preventPinnedEditorClose": "keyboard",
 	"terminal.integrated.mouseWheelZoom": false,
 	"comments.openView": "never",
-	"git.blame.editorDecoration.enabled": true,
+	"git.blame.editorDecoration.enabled": false,
 	"gitlens.currentLine.enabled": false,
 	"editor.inlayHints.fontSize": 12,
 	"editor.suggestFontSize": 12,
@@ -437,10 +436,11 @@
 	"remote.autoForwardPorts": false,
 	"files.autoSave": "afterDelay",
 	"files.hotExit": "off",
-	"workbench.sideBar.location": "right",
 	"terminal.integrated.tabs.location": "left",
 	"terminal.integrated.minimumContrastRatio": 4,
 	"explorer.confirmDragAndDrop": false,
 	"explorer.confirmPasteNative": false,
-	"githubPullRequests.quickDiff": true
+	"githubPullRequests.quickDiff": true,
+	"workbench.tree.indent": 4,
+	"githubPullRequests.fileAutoReveal": false
 }

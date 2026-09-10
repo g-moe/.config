@@ -1,0 +1,55 @@
+{
+	"await-promise": {
+		"prefix": "await-promise",
+		"body": "await new Promise(resolve => setTimeout(resolve, 1000));",
+		"description": "Adds await promise with timeout",
+	},
+	"comment-section": {
+		"prefix": "comment-section",
+		"body": [
+			"// ============================================================================",
+			"// ${1:Comment}",
+			"// ============================================================================",
+		],
+		"description": "Adds a comment section banner",
+	},
+	"console-reminder": {
+		"prefix": "todo",
+		"body": "console.debug('TODO - put back');",
+		"description": "Adds a console.debug('TODO - put back') comment, console.debug will break the linter so adding these are as a reminder to do something before deployment",
+	},
+	"eslint-disable": {
+		"prefix": "eslint-disable",
+		"body": "/* eslint-disable */",
+		"description": "Adds /* eslint-disable */",
+	},
+	"eslint-next-line-disable": {
+		"prefix": "eslint-disable-next-line",
+		"body": "// eslint-disable-next-line",
+		"description": "Adds // eslint-disable-next-line",
+	},
+	"performance-log": {
+		"prefix": "performance-log",
+		"body": [
+			"const startTime = performance.now();",
+			"$0",
+			"console.debug('Duration (ms)', performance.now() - startTime);",
+		],
+		"description": "Logs performance duration with console.debug",
+	},
+	"ts-expect": {
+		"prefix": "ts-expect",
+		"body": "// @ts-expect-error - ",
+		"description": "Adds // @ts-expect-error - ",
+	},
+	"ts-ignore": {
+		"prefix": "ts-ignore",
+		"body": "// @ts-ignore",
+		"description": "Adds // @ts-ignore",
+	},
+	"zod-import": {
+		"prefix": "zod-import",
+		"body": "import { z } from 'zod';",
+		"description": "Imports zod validator",
+	},
+}
