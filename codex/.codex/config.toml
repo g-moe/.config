@@ -1,14 +1,10 @@
 sandbox_mode = "danger-full-access"
 approval_policy = "never"
-model = "gpt-6-astra"
-model_reasoning_effort = "medium"
-service_tier = "priority"
+model = "gpt-5.6-sol"
+model_reasoning_effort = "low"
+service_tier = "ultrafast"
 allow_login_shell = true
 include_environment_context = true
-notify = [
-	"/Users/garrett/.codex/computer-use/Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient",
-	"turn-ended",
-]
 personality = "friendly"
 
 [agents]
@@ -71,37 +67,6 @@ js_repl = false
 default_mode_request_user_input = false
 terminal_visualization_instructions = true
 
-[projects."/Users/garrett/code/tradester/tradester-monorepo/tradester"]
-trust_level = "trusted"
-
-[projects."/Users/garrett/code/dev/learning"]
-trust_level = "trusted"
-
-[projects."/Users/garrett/code/dev/trader-memes"]
-trust_level = "trusted"
-
-[projects."/Users/garrett/.dotfiles"]
-trust_level = "trusted"
-
-[projects."/Users/garrett/code/dev/me"]
-trust_level = "trusted"
-
-[projects."/Users/garrett/Documents/Codex/2026-08-20/l"]
-trust_level = "trusted"
-
-[projects."/Users/garrett/Documents/Codex/2026-08-21/how"]
-trust_level = "trusted"
-
-[marketplaces.openai-bundled]
-last_updated = "2026-08-21T12:30:40Z"
-source_type = "local"
-source = "/Users/garrett/.codex/.tmp/bundled-marketplaces/openai-bundled"
-
-[marketplaces.openai-primary-runtime]
-last_updated = "2026-08-19T23:48:13Z"
-source_type = "local"
-source = "/Users/garrett/.cache/codex-runtimes/codex-primary-runtime/plugins/openai-primary-runtime"
-
 [plugins."sites@openai-bundled"]
 enabled = false
 
@@ -129,36 +94,6 @@ enabled = true
 [plugins."codex-app-tools@openai-bundled"]
 enabled = true
 
-[mcp_servers.node_repl]
-args = []
-command = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node_repl"
-startup_timeout_sec = 120
-
-[mcp_servers.node_repl.env]
-NODE_REPL_NATIVE_PIPE_CONNECT_TIMEOUT_MS = "1000"
-NODE_REPL_NODE_MODULE_DIRS = "/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
-NODE_REPL_NODE_PATH = "/Applications/ChatGPT.app/Contents/Resources/cua_node/bin/node"
-NODE_REPL_TRUSTED_CODE_PATHS = "/Users/garrett/.codex:/Applications/ChatGPT.app/Contents/Resources/cua_node/lib/node_modules"
-CODEX_HOME = "/Users/garrett/.codex"
-BROWSER_USE_AVAILABLE_BACKENDS = "chrome,iab"
-BROWSER_USE_TINYSKY_ENABLED = "0"
-NODE_REPL_INSTRUCTIONS_USE_CASE_BROWSER = "Control the in-app browser in conjunction with the Browser Plugin."
-NODE_REPL_INSTRUCTIONS_USE_CASE_CHROME = "Control the Chrome browser in conjunction with the Chrome Plugin. Prefer this method of controlling Chrome over alternatives (such as Computer Use) unless the user explicitly mentions an alternative."
-NODE_REPL_INSTRUCTIONS_USE_CASE_COMPUTER_USE = "Control desktop apps on macOS through Computer Use."
-BROWSER_USE_CODEX_APP_BUILD_FLAVOR = "prod"
-BROWSER_USE_CODEX_APP_VERSION = "26.818.22352"
-NODE_REPL_TRUSTED_SERVICES = '{"browser":"/Users/garrett/.codex/plugins/cache/openai-bundled/browser/26.818.22352/scripts/browser-service.mjs","sky":"@oai/sky/service"}'
-CODEX_CLI_PATH = "/Applications/ChatGPT.app/Contents/Resources/codex"
-
-[mcp_servers.computer-use]
-command = "./Codex Computer Use.app/Contents/SharedSupport/SkyComputerUseClient.app/Contents/MacOS/SkyComputerUseClient"
-args = ["mcp"]
-cwd = "."
-enabled = false
-
-[shell_environment_policy.set]
-NODE_REPL_TRUSTED_BROWSER_CLIENT_SHA256S = "9230e2bd8b24b7ac7a0ba6774c64bf0d78ecdabbdd91d0ed627b02a587bae2df"
-
 [apps.connector_20205bf7d4e99a89d7154bb849718324]
 enabled = false
 
@@ -166,4 +101,7 @@ enabled = false
 enabled = false
 
 [apps.asdk_app_69a089a326dc8191b32a3f2553f5be2c]
+enabled = false
+
+[features.multi_agent_v2]
 enabled = false
