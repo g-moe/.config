@@ -1,6 +1,6 @@
 import * as vscode from "vscode";
 
-import { BETTER_ERRORS_CONFIG } from "../shared/consts/betterErrors";
+import { BETTER_ERRORS_CONFIG } from "../../shared/consts/betterErrors";
 
 export function isBetterErrorsEnabled(): boolean {
 	return vscode.workspace

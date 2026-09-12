@@ -6,12 +6,12 @@ import type {
 	BetterErrorCodeSnippet,
 	BetterErrorDiagnostic,
 	BetterErrorReference,
-} from "../../shared/contracts/betterErrors";
-import { BETTER_ERRORS_CONFIG } from "../../shared/consts/betterErrors";
+} from "../../../shared/contracts/betterErrors";
+import { BETTER_ERRORS_CONFIG } from "../../../shared/consts/betterErrors";
 import {
 	formatDiagnosticSeverity,
 	toBetterErrorRange,
-} from "../../shared/diagnostics";
+} from "../../../shared/diagnostics";
 import { selectDiagnostic } from "./selectDiagnostic";
 
 const MAX_REFERENCES = 5;

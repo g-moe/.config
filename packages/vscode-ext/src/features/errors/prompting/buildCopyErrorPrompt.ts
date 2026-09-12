@@ -2,8 +2,8 @@ import type {
 	BetterErrorCodeSnippet,
 	BetterErrorPromptInput,
 	BetterErrorRange,
-} from "../../shared/contracts/betterErrors";
-import { BETTER_ERRORS_PROMPT_DEFAULTS } from "../../shared/consts/betterErrors";
+} from "../../../shared/contracts/betterErrors";
+import { BETTER_ERRORS_PROMPT_DEFAULTS } from "../../../shared/consts/betterErrors";
 
 export function buildCopyErrorPrompt({
 	diagnostic,

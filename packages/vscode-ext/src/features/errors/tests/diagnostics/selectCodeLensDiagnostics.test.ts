@@ -1,12 +1,12 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { selectCodeLensDiagnostics } from "../../../src/better-errors/diagnostics/selectCodeLensDiagnostics";
+import { selectCodeLensDiagnostics } from "../../diagnostics/selectCodeLensDiagnostics";
 import type {
 	BetterErrorRange,
 	BetterErrorSeverity,
-} from "../../../src/shared/contracts/betterErrors";
-import type { SelectableDiagnostic } from "../../../src/better-errors/diagnostics/selectDiagnostic";
+} from "../../../../shared/contracts/betterErrors";
+import type { SelectableDiagnostic } from "../../diagnostics/selectDiagnostic";
 
 test("selectCodeLensDiagnostics returns the strongest diagnostic per line", () => {
 	const diagnostics = [
