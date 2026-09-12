@@ -4,15 +4,6 @@
 
 - DO: treat questions as read-only, use query-only tools unless specifically told to change or edit something in a question.
 
-- DO: when writing production code, author the code like a human would. Do not introduce unecessary complexity. Do introduce empty lines to improve readability.
-  Good human written code has the following qualities:
-  - Low Cyclomatic complexity
-  - Reusing existing lib code, constants, types, etc to keep code DRY
-  - Clear boundaries, put code where it belongs, public contracts and apis are separate from internals
-  - Composition.
-  - Consistency, learn one pattern and continue to reuse it. Follow existing repo patterns.
-  - Naming consistency, the same concept uses the same term throughout the code, do not invent new terms when existing ones already exist. Follow existing repo patterns when naming files, folders, methods, interfaces, etc.
-
 - DO: only create branches with `garrett/` prefix
 
 - WHEN: relevant links exist, end the reply with links to the local artifacts created or used, supporting sources, or useful external documentation. Do not add links when none are relevant, and do not search for or create links solely to satisfy this rule.
@@ -30,6 +21,8 @@
   - Disabling a linter (eg. `/* eslint-disable */`)
 
 - NEVER: stage your work unless explicitly requested. Leave existing staged work alone unless explicitly requested.
+
+---
 
 ## Communication
 
@@ -237,3 +230,27 @@ The styles below are preferred response formats. Use your best judgment to selec
   	return state.releasePercent < 100 ? "expand" : "complete";
   }
   ```
+
+---
+
+## Coding
+
+Below are the requirements for authoring code. Code should be enjoyable to read. Good code can be read by skimming, BUT ONLY if that code is well written. You must author code like a human who writes code that is enjoyable to read. All code will be read by another human therefore it is your responsbility to always write good code.
+
+- Add empty lines to break up codeblocks, this improves readability.
+
+- Add comments sparingly...code commenting is an art. Too much sucks, Too little and you dont remember 6 months later why you did something. We look at code comments as the "finishing touches" to a masterpiece. The code should do 80-95% of explanation, but a few finishing touches can really help polish the final product. There is one exception to code commenting, when writing scripts the code should be heavily commented in a step-by-step process.
+
+- Keep Cyclomatic complexity low.
+
+- Keep boundaries clear; put code where it belongs and where it makes logical sense. If existing boundary patterns already exist, adapt to those rather than inventing new ones.
+
+- Keep naming consistent and simple. The same concept or domain uses the same term throughout the code, do not invent new terms when existing ones already exist. Follow existing repo patterns when naming files, folders, methods, interfaces, etc. (eg. User used the term burgundy and you start using maroon instead)
+
+- Utilize existing lib (library) or shared code this keeps code DRY.
+
+- Share code only when the callers have the same stable responsibility. Do not make a generic helper only to remove a few repeated lines.
+
+- Validate data at the boundary that owns it. Validate both shape and business rules before storage or use.
+
+- Keep the main logic easy to follow from top to bottom. The happy path should be obvious when someone scans the file. Pull detailed work into a well named function rather than making the main flow hard to read.
