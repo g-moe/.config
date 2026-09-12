@@ -3,12 +3,12 @@ import * as vscode from "vscode";
 import {
 	BETTER_ERRORS_COMMANDS,
 	BETTER_ERRORS_COMMAND_TITLES,
-	BETTER_ERRORS_CONFIG,
-} from "../../shared/consts/betterErrors";
+} from "../commands";
+import { BETTER_ERRORS_CONFIG } from "../../../shared/consts/betterErrors";
 import {
 	formatDiagnosticSeverity,
 	toBetterErrorRange,
-} from "../../shared/diagnostics";
+} from "../../../shared/diagnostics";
 import { selectCodeLensDiagnostics } from "../diagnostics/selectCodeLensDiagnostics";
 import { isBetterErrorsEnabled } from "../settings";
 

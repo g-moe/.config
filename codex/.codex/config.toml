@@ -5,7 +5,6 @@ model_reasoning_effort = "low"
 service_tier = "ultrafast"
 allow_login_shell = true
 include_environment_context = true
-personality = "friendly"
 suppress_unstable_features_warning = true
 
 [agents]

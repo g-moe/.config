@@ -151,10 +151,12 @@ application configuration folders and builds the VS Code theme package in
 
 ### `packages/vscode-ext/`
 
-This is the source for the private `better-vscode` extension. The current
-feature, `better-errors`, turns editor diagnostics into prompts that can be
-copied for an LLM. Source is under `src/`, tests are under `test/`, and
-extension documentation is under `docs/`.
+This is the source for the private `better-vscode` extension. The
+`errors` feature turns editor diagnostics into prompts that can be
+copied for an LLM. The `terminal` feature focuses one pinned terminal
+in the first editor group. Source and feature tests are under `src/features/`.
+Browser test tools are under `tests/browser/`. Extension documentation is in
+`packages/vscode-ext/README.md`.
 
 ### `packages/agent-usage/`
 
@@ -198,9 +200,12 @@ npm run install:theme         # Generate and install application themes
 npm run install:agents        # Link agent instructions, settings, and skills
 ```
 
-The root `install:*` commands are thin wrappers around
+The machine setup commands above are thin wrappers around
 `packages/installer/install.sh`. Use that script for other phases or when a
 flag is not exposed by the root package scripts.
+
+Run `npm run install:vscode-ext` from the repository root to build and install
+better-vscode in VSCodium. Then run **Developer: Reload Window** in VSCodium.
 
 The installer supports macOS and Debian 13 (trixie). Linux requires an Xfce,
 LightDM, and X11 installation prepared before the dotfiles installer runs.

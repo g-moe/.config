@@ -944,12 +944,7 @@
 		"command": "-workbench.action.quickOpenNavigatePreviousInFilePicker",
 		"when": "inFilesPicker && inQuickOpen"
 	},
-	{
-		"key": "cmd+e cmd+t",
-		"command": "workbench.action.terminal.toggleTerminal",
-		"when": "terminal.active"
-	},
-	{
+    {
 		"key": "cmd+e cmd+x",
 		"command": "workbench.view.extensions",
 		"when": "viewContainer.workbench.view.extensions.enabled"
@@ -1207,11 +1202,7 @@
 		"command": "-notebook.cell.expandCellOutput",
 		"when": "notebookCellListFocused && notebookCellOutputIsCollapsed"
 	},
-	{
-		"key": "cmd+e cmd+f",
-		"command": "workbench.action.findInFiles"
-	},
-	{
+    {
 		"key": "shift+cmd+f",
 		"command": "-workbench.action.findInFiles"
 	},
@@ -1951,5 +1942,28 @@
     {
         "key": "ctrl+shift+alt+f",
         "command": "workbench.action.navigateForwardInEditLocations"
+    },
+    {
+        "key": "cmd+e cmd+f",
+        "command": "search.action.openEditor"
+    },
+    {
+        "key": "shift+alt+cmd+g",
+        "command": "-editor.action.announceCursorPosition",
+        "when": "accessibilityModeEnabled && editorTextFocus"
+    },
+    {
+        "key": "cmd+e cmd+t",
+        "command": "workbench.action.openEditorAtIndex1"
+    },
+    {
+        "key": "cmd+e cmd+r",
+        "command": "workbench.action.replaceInFiles",
+        "when": "!isSessionsWindow"
+    },
+    {
+        "key": "shift+cmd+h",
+        "command": "-workbench.action.replaceInFiles",
+        "when": "!isSessionsWindow"
     }
 ]

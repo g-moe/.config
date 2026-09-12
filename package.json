@@ -18,6 +18,7 @@
 		"install:retire": "bash packages/installer/install.sh --retire",
 		"install:machine": "bash packages/installer/install.sh",
 		"install:test": "bash packages/installer/tests/run.sh",
+		"install:vscode-ext": "npm --prefix packages/vscode-ext run install:codium",
 		"test:mactop": "cd packages/mac/mactop && make verify",
 		"verify:machine": "bash packages/installer/tests/repository/installed-links.sh",
 		"test:agent-usage": "node --import tsx --test packages/agent-usage/tests/*.test.ts"

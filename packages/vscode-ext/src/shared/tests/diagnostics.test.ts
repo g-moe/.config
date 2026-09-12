@@ -1,10 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 
-import {
-	formatDiagnosticSeverity,
-	toBetterErrorRange,
-} from "../../src/shared/diagnostics";
+import { formatDiagnosticSeverity, toBetterErrorRange } from "../diagnostics";
 
 test("formatDiagnosticSeverity maps known VS Code severity values", () => {
 	assert.deepEqual([0, 1, 2, 3].map(formatDiagnosticSeverity), [

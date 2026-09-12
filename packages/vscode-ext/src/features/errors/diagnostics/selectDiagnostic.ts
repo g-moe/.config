@@ -2,7 +2,7 @@ import type {
 	BetterErrorPosition,
 	BetterErrorRange,
 	BetterErrorSeverity,
-} from "../../shared/contracts/betterErrors";
+} from "../../../shared/contracts/betterErrors";
 
 export type SelectableDiagnostic<TDiagnostic> = {
 	diagnostic: TDiagnostic;

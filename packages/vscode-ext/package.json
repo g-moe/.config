@@ -3,7 +3,7 @@
 	"displayName": "better-vscode",
 	"version": "0.0.1",
 	"private": true,
-	"description": "Editor productivity tools for VS Code, starting with better-errors.",
+	"description": "Editor productivity tools with a pinned terminal editor and commands to copy errors.",
 	"categories": [
 		"Other"
 	],
@@ -12,6 +12,7 @@
 		"errors",
 		"llm",
 		"prompt",
+		"terminal",
 		"typescript"
 	],
 	"license": "MIT",
@@ -22,15 +23,17 @@
 	"publisher": "gary-ix",
 	"main": "./dist/extension.js",
 	"scripts": {
+		"vscode:prepublish": "npm run compile",
 		"clean": "rm -rf dist dist-test better-vscode.vsix",
 		"build": "npm run clean && npm run compile",
 		"compile": "tsc -p ./",
 		"compile-tests": "npm run clean && tsc -p ./tsconfig.test.json",
 		"package:vsix": "vsce package --out better-vscode.vsix",
-		"test": "npm run compile-tests && node --test \"dist-test/test/**/*.test.js\"",
+		"test": "npm run compile-tests && node --test \"dist-test/src/**/tests/**/*.test.js\" \"dist-test/tests/browser/*.test.js\"",
 		"watch": "tsc -watch -p ./",
 		"install:cursor": "npm run package:vsix && ELECTRON_RUN_AS_NODE=1 \"/Applications/Cursor.app/Contents/MacOS/Cursor\" \"/Applications/Cursor.app/Contents/Resources/app/out/cli.js\" --install-extension \"./better-vscode.vsix\" --force",
-		"install:codium": "npm run build && npm run package:vsix && codium --install-extension \"./better-vscode.vsix\" --force"
+		"install:codium": "npm run build && npm run package:vsix && codium --install-extension \"./better-vscode.vsix\" --force",
+		"test:integration": "npm run compile-tests && npm run compile && bash tests/browser/run.sh"
 	},
 	"devDependencies": {
 		"@types/node": "24.13.1",
@@ -47,6 +50,16 @@
 			{
 				"command": "betterErrors.toggleEnabled",
 				"title": "better-errors: Toggle Enabled"
+			},
+			{
+				"command": "better-vscode.terminal.focus",
+				"title": "terminal - focus",
+				"category": "better-vscode"
+			},
+			{
+				"command": "better-vscode.terminal.focusAndMaximize",
+				"title": "terminal - focus & maximize",
+				"category": "better-vscode"
 			}
 		],
 		"menus": {

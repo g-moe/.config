@@ -1,8 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 
-import { buildCopyErrorPrompt } from "../../../src/better-errors/prompting/buildCopyErrorPrompt";
-import type { BetterErrorDiagnostic } from "../../../src/shared/contracts/betterErrors";
+import { buildCopyErrorPrompt } from "../../prompting/buildCopyErrorPrompt";
+import type { BetterErrorDiagnostic } from "../../../../shared/contracts/betterErrors";
 
 test("buildCopyErrorPrompt includes trimmed high-signal sections", () => {
 	const diagnostic: BetterErrorDiagnostic = {
