@@ -137,7 +137,7 @@
 	"editor.fontFamily": "JetBrains Mono",
 	"editor.fontLigatures": true,
 	"editor.fontSize": 15,
-	"editor.fontWeight": "750",
+	"editor.fontWeight": "500",
 	"editor.formatOnSave": true,
 	"editor.gotoLocation.multipleDeclarations": "goto",
 	"editor.gotoLocation.multipleDefinitions": "goto",
@@ -350,7 +350,7 @@
 	"window.titleBarStyle": "native",
 	"editor.hideCursorInOverviewRuler": true,
 	"debug.gutterMiddleClickAction": "none",
-	"scm.diffDecorationsGutterWidth": 5,
+	"scm.diffDecorationsGutterWidth": 1,
 	"color-highlight.markRuler": false,
 	"window.titleSeparator": "",
 	"window.title": "${rootName}:${activeRepositoryBranchName}",
@@ -428,8 +428,7 @@
 	},
 	"git.detectWorktrees": true,
 	"security.workspace.trust.enabled": false,
-	"scm.repositories.selectionMode": "single",
-	"terminal.integrated.fontSize": 11,
+    "scm.repositories.selectionMode": "single",
 	"workbench.editor.highlightModifiedTabs": true,
 	"workbench.editor.showTabIndex": true,
 	"workbench.editor.tabActionLocation": "left",
@@ -442,5 +441,7 @@
 	"explorer.confirmPasteNative": false,
 	"githubPullRequests.quickDiff": true,
 	"workbench.tree.indent": 4,
-	"githubPullRequests.fileAutoReveal": false
+    "githubPullRequests.fileAutoReveal": false,
+    "terminal.integrated.fontSize": 13,
+    "scm.diffDecorations": "overview"
 }
